@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GM Armonía — ¿Quiénes somos?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img src="logo_gama.png" alt="Esencias Gama" class="brand__logo">
+        <span class="brand__name">Esencias Gama</span>
+      </a>
+
+      <nav class="nav">
+        <a class="pill" href="/nosotros.html">Nosotros</a>
+        <a class="pill pill--current" href="productos.html">Catálogo</a>
+        <a class="pill" href="/contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero ¿Quiénes somos? -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title">¿Quiénes somos?</h1>
+          <p class="lead">
+            <strong>Esencias Gama</strong> es una empresa enfocada al mercado
+            de productos químicos aromáticos y aceites esenciales. Actualmente
+            abarcamos ramas del sector químico como la farmacéutica, la cosmética,
+            la perfumería, la química aromática y la química alimenticia.
+          </p>
+        </div>
+
+        <!-- Ilustración a la derecha -->
+        <div class="hero__art" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Texto + bullets -->
+    <section class="section">
+      <div class="container narrow">
+        <hr class="divider">
+
+        <p class="body">
+          Hoy en día, tanto el mercado nacional como el internacional que se
+          atiende es considerable y diverso, gracias en parte a la localización
+          estratégica para el manejo de embarques, y en parte a las
+          características principales de la empresa:
+        </p>
+
+        <ul class="ticks">
+          <li>
+            <span class="tick" aria-hidden="true">
+              <!-- check circle svg -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm-1.05 14.29-3.94-3.94 1.41-1.41 2.53 2.53 5.58-5.58 1.41 1.41-6.99 6.99Z"/></svg>
+            </span>
+            <span class="tick__text">Pronta capacidad de respuesta ante las necesidades del cliente.</span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm-1.05 14.29-3.94-3.94 1.41-1.41 2.53 2.53 5.58-5.58 1.41 1.41-6.99 6.99Z"/></svg>
+            </span>
+            <span class="tick__text">Venta de pequeños y grandes volúmenes.</span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm-1.05 14.29-3.94-3.94 1.41-1.41 2.53 2.53 5.58-5.58 1.41 1.41-6.99 6.99Z"/></svg>
+            </span>
+            <span class="tick__text">Acceso a especialidades químicas.</span>
+          </li>
+        </ul>
+
+        <hr class="divider">
+
+        <p class="body">
+          El equipo de <strong>GM ARMONIA S.A. DE C.V.</strong>, integrado por personal
+          administrativo, técnico, de producción, de tráfico, de laboratorio y de
+          almacén, está capacitado para brindar una atención pronta y confiable
+          a cualquiera de sus solicitudes. <em>Servir y satisfacer es nuestra
+          principal preocupación.</em>
+        </p>
+
+        <hr class="divider">
+      </div>
+    </section>
+
+    <!-- Franja de “Comparte” -->
+    <section class="share">
+      <div class="container">
+        <h2 class="share__title">COMPARTE!</h2>
+        <div class="share__actions">
+          <a class="btn" href="#" aria-label="Compartir en Facebook">Facebook</a>
+          <a class="btn" href="#" aria-label="Compartir en LinkedIn">LinkedIn</a>
+          <a class="btn" href="#" aria-label="Compartir en X">X</a>
+          <a class="btn" href="#" aria-label="Compartir por correo">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="y"></span> Esencias Gama. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* ====== Base / tokens ====== */
+:root{
+  /* ⬇️ Paleta: antes morados → ahora verdes */
+  --purple-900:#0a3d2a;   /* CAMBIO a verde oscuro (antes #2a0a4a) */
+  --purple-800:#0f5a3e;   /* CAMBIO a verde profundo (antes #3e0a70) */
+  --purple-700:#157a52;   /* CAMBIO a verde medio (antes #5a1c9b) */
+  --purple:#1ca866;       /* CAMBIO acento verde (antes #6d28d9) */
+  --purple-300:#a7f3d0;   /* CAMBIO verde claro p/divisor (antes #c4b5fd) */
+
+  --bg:#0f021c;           /* lo dejo igual (fondo base oscuro) */
+
+  --text:#f5f5ff;
+  --muted:#d9d6ffcc;      /* lo dejo igual: contraste claro OK */
+  --chip-bg:rgba(255,255,255,.09);
+  --chip-bd:rgba(255,255,255,.18);
+  --surface:#18052e;      /* mantiene el nivel de oscuridad */
+
+  /* ⬇️ Humo/fondos con matiz verde (antes lilas/rosas) */
+  --smoke:
+    radial-gradient(60% 80% at 0% 10%,  #6ee7b733 0%, transparent 60%),  /* CAMBIO */
+    radial-gradient(70% 80% at 80% 10%, #34d39926 0%, transparent 70%),  /* CAMBIO */
+    radial-gradient(60% 80% at 50% 60%, #22c55e26 0%, transparent 70%);  /* CAMBIO */
+
+  /* Imagen del héroe (reemplaza por la tuya) */
+  --hero-illustration: url("Fondo_index.jpg");
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+
+  /* ⬇️ Degradado principal: morado → verde petróleo manteniendo contraste */
+  background:linear-gradient(180deg, var(--bg), #071d17 35%, #0b2a22 100%); /* CAMBIO (antes #12032a, #1a0636) */
+}
+
+/* ====== Helpers ====== */
+.container{
+  width:min(1120px, 92vw);
+  margin-inline:auto;
+}
+.narrow{ width:min(840px, 92vw); }
+.lead{ font-size:clamp(1.1rem, 1.2rem + 0.6vw, 1.5rem); line-height:1.6; color:var(--muted); }
+.body{ font-size:1.05rem; line-height:1.8; color:var(--muted); }
+.divider{
+  border:0;
+  height:2px;
+  width:140px;
+  margin:28px auto;
+  /* ya usa --purple-300 (ahora verde claro) */
+  background:linear-gradient(90deg, transparent, var(--purple-300), transparent);
+  opacity:.7;
+}
+
+/* ====== Header ====== */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  /* ⬇️ Gradiente header: usa variables ya verdes */
+  background:linear-gradient(180deg, var(--purple-900), var(--purple-800)); /* CAMBIO implícito por tokens */
+  border-bottom:1px solid #ffffff14;
+  backdrop-filter:saturate(140%) blur(6px);
+}
+.header__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text)}
+.brand__logo{height:36px; width:auto}
+.brand__name{font-weight:800; letter-spacing:.02em}
+
+.nav{display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end}
+.pill{
+  --pad: .55rem 1rem;
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:var(--pad);
+  border-radius:999px;
+  border:1px solid var(--chip-bd);
+  background:var(--chip-bg);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  transition:transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.pill:hover{ transform:translateY(-1px); border-color:#ffffff40; }
+.pill--accent{ background:#ffffff1a; border-color:#ffffff33; }
+
+/* ====== Hero ====== */
+.hero{
+  position:relative;
+  padding: clamp(40px, 6vw, 80px) 0 clamp(24px, 4vw, 40px);
+  background:
+    var(--smoke),
+    radial-gradient(60% 60% at 95% 20%, #22c55e33 0%, transparent 70%); /* CAMBIO (antes #8645ff33) */
+  overflow:hidden;
+}
+.hero__grid{
+  display:grid;
+  grid-template-columns: 1.2fr .9fr;
+  align-items:center;
+  gap:min(6vw, 64px);
+}
+.hero__title{
+  margin:0 0 10px;
+  font-weight:900;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  letter-spacing:.01em;
+  color:#d2ffe7;            /* CAMBIO a verde muy claro (antes #d8caff) */
+  text-shadow:0 8px 30px #00000055;
+}
+.hero__copy{max-width:760px}
+.hero__art{
+  min-height:360px;
+  border-radius:28px;
+  background:
+    linear-gradient(180deg, #ffffff0f, #ffffff05),
+    var(--hero-illustration) center/cover no-repeat;
+  box-shadow:
+    0 20px 60px #00000066,
+    inset 0 0 0 1px #ffffff14;
+}
+
+/* ====== Section (bullets + texto) ====== */
+.section{ padding: 28px 0 48px; }
+.ticks{list-style:none; padding-left:0; margin:22px 0 8px; display:grid; gap:12px}
+.ticks li{
+  display:grid; grid-template-columns:auto 1fr; gap:.8rem;
+  align-items:center;
+  background: #ffffff08;
+  border:1px solid #ffffff12;
+  border-radius:14px; padding:.8rem 1rem;
+}
+.tick{
+  display:grid; place-items:center;
+  width:32px; height:32px;
+  border-radius:999px;
+  color:#9af2c6;     /* CAMBIO: icono check verde (antes #bda6ff) */
+  background:#ffffff10;
+  border:1px solid #ffffff1c;
+}
+.tick__text{ color:#d3ffe9; font-weight:600 } /* CAMBIO: texto de bullet más verdoso (antes #d9d6ff) */
+
+/* ====== Share stripe ====== */
+.share{
+  /* ⬇️ Gradiente: usa tokens verdes */
+  background:linear-gradient(180deg, var(--purple-800), var(--purple-900)); /* CAMBIO implícito por tokens */
+  padding:38px 0 46px;
+  border-top:1px solid #ffffff14;
+}
+.share__title{
+  text-align:center; margin:0 0 14px;
+  letter-spacing:.12em; font-weight:800; color:#d2ffe7; /* CAMBIO (antes #d7caff) */
+}
+.share__actions{
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center;
+}
+.btn{
+  text-decoration:none; color:var(--text); font-weight:700;
+  border:1px solid #ffffff26; background:#ffffff14;
+  padding:.65rem 1rem; border-radius:999px;
+}
+.btn:hover{ border-color:#ffffff40 }
+
+/* ====== Footer ====== */
+.site-footer{ padding:22px 0; background:#0b0215; border-top:1px solid #ffffff12; color:#cfc8ffbb; }
+.site-footer .container{ display:flex; justify-content:center }
+
+/* ====== Responsive ====== */
+@media (max-width: 980px){
+  .hero__grid{ grid-template-columns: 1fr; }
+  .hero__art{ order:-1; min-height:300px }
+  .nav{ gap:.4rem }
+}
+@media (max-width: 600px){
+  .brand__name{ display:none } /* deja solo el logo en móviles si el espacio es corto */
+  .pill{ padding:.5rem .8rem; font-weight:600 }
+  .hero{ padding-top:28px }
+}
