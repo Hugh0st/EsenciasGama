@@ -1,0 +1,111 @@
+/* ============================
+   CONTACTO — Esencias Gama
+   ============================ */
+
+:root{
+  --green-900:#124c2b;
+  --green-700:#1e7a47;
+  --green-600:#228c52;
+  --green-500:#2fa968;
+  --gray-700:#374151;
+  --gray-600:#4b5563;
+  --gray-500:#6b7280;
+  --gray-200:#e5e7eb;
+  --radius-xl:18px;
+  --shadow-1:0 10px 24px rgba(17,24,39,.10);
+  --shadow-2:0 6px 16px rgba(17,24,39,.08);
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:#1e2b22;
+  background:
+    radial-gradient(1200px 700px at 50% 0%, rgba(31,115,70,.25), transparent 70%),
+    linear-gradient(180deg,#d7e5db 0%, #c6d9ce 50%, #b7cbbf 100%);
+  line-height:1.6;
+}
+.container{width:min(1120px,92%);margin:auto}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:saturate(140%) blur(6px);
+  background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.65));
+  box-shadow:0 1px 0 rgba(17,24,39,.06);
+}
+.header__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+.brand__logo{width:90px;height:70px;object-fit:contain;border-radius:8px;box-shadow:var(--shadow-2);}
+.brand__name{font-size:1.4rem;font-weight:700;letter-spacing:.2px;color:var(--green-900)}
+.nav{display:flex;gap:.5rem}
+.pill{padding:.55rem .9rem;border-radius:999px;border:1px solid rgba(55,65,81,.25);text-decoration:none;color:var(--gray-700);}
+.pill:hover{border-color:rgba(34,140,82,.45);transform:translateY(-1px);}
+.pill--current{background:linear-gradient(180deg,rgba(47,169,104,.18),rgba(34,140,82,.12));color:var(--green-900);}
+
+/* Hero */
+.hero{
+  padding:90px 0 60px;
+  background:
+    linear-gradient(180deg, rgba(39,126,80,.15), rgba(39,126,80,.05)),
+    linear-gradient(180deg,#c9dace,#dbe8e0);
+}
+.hero__grid {display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;}
+.hero__title{margin:0 0 10px;font-size:clamp(28px,4vw,42px);color:var(--green-900)}
+.hero__desc{color:var(--gray-600)}
+
+/* Tarjetas */
+.section{padding:70px 0;}
+.grid{display:grid;gap:24px;grid-template-columns:1.2fr .8fr;}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.75));
+  border:1px solid rgba(17,24,39,.06);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-1);
+  padding:24px;
+}
+
+/* Contacto */
+.contact-list{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:12px;}
+.contact-item{display:flex;align-items:center;gap:.75rem;padding:12px 14px;background:rgba(255,255,255,.6);border-radius:12px;border:1px solid rgba(17,24,39,.06);box-shadow:var(--shadow-2);}
+.contact-ico{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--green-600),var(--green-700));color:#fff;box-shadow:0 3px 10px rgba(34,140,82,.35);}
+.contact-item a{color:var(--green-700);text-decoration:none;font-weight:600;}
+.contact-item a:hover{text-decoration:underline;}
+
+.hours{display:grid;gap:8px;background:rgba(255,255,255,.6);border:1px solid rgba(17,24,39,.06);border-radius:12px;padding:14px;box-shadow:var(--shadow-2);}
+.hours dt{font-weight:700;color:var(--green-900)}
+.hours dd{margin:0;color:var(--gray-600)}
+
+/* Formulario */
+.form{display:grid;gap:12px;}
+.field{display:grid;gap:6px;}
+.label{font-weight:700;color:var(--green-900)}
+.input,.textarea{border:1px solid rgba(34,140,82,.35);border-radius:12px;padding:.75rem .9rem;font:inherit;color:var(--gray-700);background:linear-gradient(180deg,#ffffffcc,#ffffffb3);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 6px rgba(17,24,39,.08);}
+.input:focus,.textarea:focus{border-color:var(--green-600);box-shadow:0 0 0 4px rgba(34,140,82,.18);}
+.textarea{min-height:140px;resize:vertical;}
+.btn{padding:.75rem 1rem;border-radius:12px;border:0;background:linear-gradient(180deg,var(--green-600),var(--green-700));color:#fff;font-weight:700;box-shadow:0 10px 18px rgba(34,140,82,.28);cursor:pointer;}
+.btn:hover{transform:translateY(-1px);}
+
+/* Mapa con degradado verde */
+.map-section{
+  position:relative;isolation:isolate;
+  padding:70px 0;
+  color:#0b2b1b;
+  background:
+    linear-gradient(180deg, rgba(34,140,82,.09), rgba(34,140,82,.12)),
+    linear-gradient(8deg, rgba(34,140,82,.10) 0 70%, transparent 70%);
+}
+.map-section::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(34,140,82,.18)0%,rgba(47,169,104,.20)35%,rgba(34,140,82,.18)70%,rgba(34,140,82,.10)100%);
+  transform:skewY(-2deg);
+  transform-origin:top left;
+  z-index:-1;
+}
+.map-title{text-align:center;color:var(--green-900);font-size:1.6rem;font-weight:800;margin-bottom:8px;}
+.map-desc{text-align:center;color:var(--gray-700);margin-bottom:32px;}
+.map-frame{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-1);}
+
+/* Footer */
+.site-footer{padding:28px 0;text-align:center;color:var(--gray-600);border-top:1px solid rgba(17,24,39,.06);}

@@ -37,14 +37,6 @@ body{
   line-height:1.6;
 }
 
-/* Hero */
-.hero{
-  padding:90px 0 60px;
-  background:
-    linear-gradient(180deg, rgba(39,126,80,.15), rgba(39,126,80,.05)),
-    linear-gradient(180deg,#c9dace,#dbe8e0);
-}
-
 /* Section general */
 .section{
   background:linear-gradient(180deg,#c3d6c8 0%, #b8cabd 100%);
@@ -143,6 +135,8 @@ body{
     url("Fondo_index.jpg") center/cover no-repeat,
     linear-gradient(145deg, rgba(47,169,104,0.25), rgba(31,115,70,0.15));
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  position: relative;      /* <-- añade esto */
+  overflow: hidden;        /* <-- y esto */
 }
 .hero__art::after{
   /* patrón de ondas suave */
@@ -250,4 +244,9 @@ body{
   .pill{ padding:.5rem .8rem; font-size:.95rem }
   .section{ padding:52px 0 }
   .ticks li{ grid-template-columns:26px 1fr; padding:10px 12px }
+}
+@media (max-width: 640px){
+  .brand__logo{ width:72px; height:56px; }
+  .brand__name{ font-size:1.2rem; }
+  .header__inner{ padding:12px 0; }
 }
