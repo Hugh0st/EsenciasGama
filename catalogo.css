@@ -146,19 +146,23 @@ body{
   font:inherit; color:var(--gray-700);
 }
 
-/* === 1) Chips con fondo visible y buen contraste === */
+/* === Chips redondeados === */
 .chip{
-  /* más relleno y fondo opaco suave para que no se pierdan */
-  padding: .55rem .9rem;
-  background: linear-gradient(180deg, #ffffffcc, #ffffffb3); /* blanco translúcido, no transparente */
+  padding: .55rem 1.1rem;
+  background: linear-gradient(180deg, #ffffffdd, #ffffffc7);
   color: var(--green-900);
-  border: 1px solid rgba(34,140,82,.35);
+  border: 1px solid rgba(34,140,82,.30);
+  border-radius: 999px;            /* ← redondeado real */
   box-shadow: 0 2px 6px rgba(17,24,39,.08), inset 0 1px 0 rgba(255,255,255,.9);
   transition: .2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
 .chip:hover{
   background: linear-gradient(180deg, #ffffff, #f3faf6);
 }
+
 .chip.is-active{
   background: linear-gradient(180deg, var(--green-600), var(--green-700));
   color: #fff;
@@ -166,8 +170,49 @@ body{
   box-shadow: 0 8px 16px rgba(34,140,82,.28);
 }
 
-/* opcional: separa un poco la fila de chips de la búsqueda para que respiren */
-.chips{ gap: .6rem; }
+/* Contenedor que NO afecta el grid completo */
+.chips-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.25);
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+
+/* Flechas tipo burbuja */
+.chips-arrow{
+  border: none;
+  background: rgba(255,255,255,0.95);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--green-900);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  flex-shrink: 0;
+}
+
+.chips-arrow:hover{
+  background: white;
+}
+
+.chips-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.22);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.chips-arrow:hover {
+  background: white;
+}
 
 /* === 2) Evitar salto de línea en "Ordenar por:" === */
 /* === Mejora visual del bloque "Ordenar por" === */
@@ -277,6 +322,33 @@ body{
   outline:3px solid var(--green-300);
   outline-offset:2px;
   border-radius:10px;
+}
+
+/* === Restaurar scroll horizontal real para chips === */
+
+.chips {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;   /* Firefox */
+  padding: 4px 0;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* Evitar que los chips bajen a otra línea */
+.chips .chip {
+  flex-shrink: 0;
+}
+
+/* Limitar el ancho para que quede centrado entre búsqueda y ordenar */
+.chips-container {
+  max-width: 100%;
+  overflow: hidden; /* evita que se desborde el fondo difuminado */
 }
 
 /* --------- Responsivo --------- */

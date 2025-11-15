@@ -46,24 +46,24 @@
         </label>
 
         <!-- Chips de categoría (puedes agregar/quitar) -->
-        <div class="chips" role="group" aria-label="Filtrar por categoría">
-          <button class="chip is-active" data-filter="all">Todo</button>
-
-          <!-- Encabezados reales de tus hojas -->
-          <button class="chip" data-filter="aceites_esenciales">Aceites esenciales</button>
-          <button class="chip" data-filter="terpenos">Terpenos</button>
-          <button class="chip" data-filter="acetatos">Acetatos</button>
-          <button class="chip" data-filter="acidos">Ácidos</button>
-          <button class="chip" data-filter="butiratos">Butiratos</button>
-          <button class="chip" data-filter="caproatos">Caproatos</button>
-          <button class="chip" data-filter="aldehidos">Aldeídos</button>
-          <button class="chip" data-filter="valerianatos">Valerianatos</button>
-          <button class="chip" data-filter="veltol">Veltol</button>
-          <button class="chip" data-filter="salicilatos">Salicilatos</button>
-
-          <!-- Categorías funcionales para materiales sin encabezado -->
-          <button class="chip" data-filter="fragancias">Fragancias</button>
-          <button class="chip" data-filter="solventes">Solventes</button>
+        <div class="chips-container">
+          <button class="chips-arrow chips-arrow--left">‹</button>
+          <div class="chips" role="group" aria-label="Filtrar por categoría">
+            <button class="chip is-active" data-filter="all">Todo</button>
+            <button class="chip" data-filter="aceites_esenciales">Aceites esenciales</button>
+            <button class="chip" data-filter="terpenos">Terpenos</button>
+            <button class="chip" data-filter="acetatos">Acetatos</button>
+            <button class="chip" data-filter="acidos">Ácidos</button>
+            <button class="chip" data-filter="butiratos">Butiratos</button>
+            <button class="chip" data-filter="caproatos">Caproatos</button>
+            <button class="chip" data-filter="aldehidos">Aldeídos</button>
+            <button class="chip" data-filter="valerianatos">Valerianatos</button>
+            <button class="chip" data-filter="veltol">Veltol</button>
+            <button class="chip" data-filter="salicilatos">Salicilatos</button>
+            <button class="chip" data-filter="fragancias">Fragancias</button>
+            <button class="chip" data-filter="solventes">Solventes</button>
+          </div>
+          <button class="chips-arrow chips-arrow--right">›</button>
         </div>
 
         <!-- Orden -->
@@ -722,6 +722,19 @@
 
     // Inicial
     render();
+  </script>
+  <script>
+    const chipsStrip = document.querySelector('.chips');
+    const arrowLeft = document.querySelector('.chips-arrow--left');
+    const arrowRight = document.querySelector('.chips-arrow--right');
+
+    arrowLeft.addEventListener('click', () => {
+      chipsStrip.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+
+    arrowRight.addEventListener('click', () => {
+      chipsStrip.scrollBy({ left: 200, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
