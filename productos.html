@@ -48,10 +48,21 @@
         <!-- Chips de categoría (puedes agregar/quitar) -->
         <div class="chips" role="group" aria-label="Filtrar por categoría">
           <button class="chip is-active" data-filter="all">Todo</button>
-          <button class="chip" data-filter="aceites">Aceites</button>
-          <button class="chip" data-filter="fragancias">Fragancias</button>
-          <button class="chip" data-filter="alcalinos">Alcalinos</button>
+
+          <!-- Encabezados reales de tus hojas -->
+          <button class="chip" data-filter="aceites_esenciales">Aceites esenciales</button>
+          <button class="chip" data-filter="terpenos">Terpenos</button>
+          <button class="chip" data-filter="acetatos">Acetatos</button>
           <button class="chip" data-filter="acidos">Ácidos</button>
+          <button class="chip" data-filter="butiratos">Butiratos</button>
+          <button class="chip" data-filter="caproatos">Caproatos</button>
+          <button class="chip" data-filter="aldehidos">Aldeídos</button>
+          <button class="chip" data-filter="valerianatos">Valerianatos</button>
+          <button class="chip" data-filter="veltol">Veltol</button>
+          <button class="chip" data-filter="salicilatos">Salicilatos</button>
+
+          <!-- Categorías funcionales para materiales sin encabezado -->
+          <button class="chip" data-filter="fragancias">Fragancias</button>
           <button class="chip" data-filter="solventes">Solventes</button>
         </div>
 
@@ -70,64 +81,575 @@
     <section class="catalogo">
       <div class="container">
         <div id="count" class="count">Mostrando 0 productos</div>
-
-        <div id="grid" class="grid">
-          <!-- Tarjetas de ejemplo. Duplica/modifica según tu inventario.
-               data-cat admite varias categorías separadas por espacio -->
-          <article class="card" data-name="Acetato de amilo" data-cat="acidos solventes">
-            <div class="card__badges"><span class="badge">Ácido</span><span class="badge">Solvente</span></div>
-            <h3 class="card__title">Acetato de amilo</h3>
-            <p class="card__meta">CAS: 628-63-7</p>
-            <a class="card__cta" href="/producto/acetato-de-amilo.html">Ver ficha</a>
+          <div id="grid" class="grid">
+          <article class="card" data-name="Bergamota" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Bergamota</h3>
           </article>
 
-          <article class="card" data-name="Aceite esencial de lavanda" data-cat="aceites fragancias">
-            <div class="card__badges"><span class="badge">Aceite</span><span class="badge">Fragancia</span></div>
-            <h3 class="card__title">Aceite esencial de lavanda</h3>
-            <p class="card__meta">Origen: Francia · 100% puro</p>
-            <a class="card__cta" href="/producto/aceite-lavanda.html">Ver ficha</a>
+          <article class="card" data-name="Cedro tipo Texas" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Cedro tipo Texas</h3>
           </article>
 
-          <article class="card" data-name="Limoneno" data-cat="fragancias solventes">
-            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
-            <h3 class="card__title">Limoneno</h3>
-            <p class="card__meta">Notas cítricas · USP</p>
-            <a class="card__cta" href="/producto/limoneno.html">Ver ficha</a>
+          <article class="card" data-name="Citronela" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Citronela</h3>
           </article>
 
-          <article class="card" data-name="Hidróxido de sodio" data-cat="alcalinos">
-            <div class="card__badges"><span class="badge">Alcalino</span></div>
-            <h3 class="card__title">Hidróxido de sodio</h3>
-            <p class="card__meta">NaOH · Perlas/Hojuela</p>
-            <a class="card__cta" href="/producto/hidroxido-sodio.html">Ver ficha</a>
+          <article class="card" data-name="Eucalipto" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Eucalipto</h3>
           </article>
 
-          <article class="card" data-name="Ácido cítrico anhidro" data-cat="acidos">
+          <article class="card" data-name="Hierbabuena" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Hierbabuena</h3>
+          </article>
+
+          <article class="card" data-name="Hojas de canela" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Hojas de canela</h3>
+          </article>
+
+          <article class="card" data-name="Hojas de clavo" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Hojas de clavo</h3>
+          </article>
+
+          <article class="card" data-name="Lavanda 40/42" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Lavanda 40/42</h3>
+          </article>
+
+          <article class="card" data-name="Lemongrass" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Lemongrass</h3>
+          </article>
+
+          <article class="card" data-name="Limón tipo California" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Limón tipo California</h3>
+          </article>
+
+          <article class="card" data-name="Limón tipo centrifugado" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Limón tipo centrifugado</h3>
+          </article>
+
+          <article class="card" data-name="Limón tipo destilado" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Limón tipo destilado</h3>
+          </article>
+
+          <article class="card" data-name="Litsea cubeba" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Litsea cubeba</h3>
+          </article>
+
+          <article class="card" data-name="Mandarina" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Mandarina</h3>
+          </article>
+
+          <article class="card" data-name="Menta (aceite esencial)" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Menta</h3>
+          </article>
+
+          <article class="card" data-name="Petitgrain" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Petitgrain</h3>
+          </article>
+
+          <article class="card" data-name="Pimienta negra" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Pimienta negra</h3>
+          </article>
+
+          <article class="card" data-name="Romero" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Romero</h3>
+          </article>
+
+          <article class="card" data-name="Tomillo blanco" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Tomillo blanco</h3>
+          </article>
+
+          <article class="card" data-name="Toronja" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Toronja</h3>
+          </article>
+
+          <article class="card" data-name="Ylang No.3" data-cat="aceites_esenciales">
+            <div class="card__badges"><span class="badge">Aceite esencial</span></div>
+            <h3 class="card__title">Ylang No.3</h3>
+          </article>
+
+          <article class="card" data-name="Ácido butírico" data-cat="acidos">
             <div class="card__badges"><span class="badge">Ácido</span></div>
-            <h3 class="card__title">Ácido cítrico anhidro</h3>
-            <p class="card__meta">USP/FCC · Food grade</p>
-            <a class="card__cta" href="/producto/acido-citrico.html">Ver ficha</a>
+            <h3 class="card__title">Ácido butírico</h3>
           </article>
 
-          <article class="card" data-name="Etanol" data-cat="solventes">
-            <div class="card__badges"><span class="badge">Solvente</span></div>
-            <h3 class="card__title">Etanol</h3>
-            <p class="card__meta">96° · Desnaturalizado</p>
-            <a class="card__cta" href="/producto/etanol.html">Ver ficha</a>
+          <article class="card" data-name="Ácido caprílico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido caprílico</h3>
           </article>
 
-          <article class="card" data-name="Aceite de eucalipto globulus" data-cat="aceites fragancias">
-            <div class="card__badges"><span class="badge">Aceite</span><span class="badge">Fragancia</span></div>
-            <h3 class="card__title">Aceite de eucalipto globulus</h3>
-            <p class="card__meta">Notas frescas · 1,8-cineol</p>
-            <a class="card__cta" href="/producto/aceite-eucalipto.html">Ver ficha</a>
+          <article class="card" data-name="Ácido caproico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido caproico</h3>
           </article>
 
-          <article class="card" data-name="Carbonato de sodio" data-cat="alcalinos">
-            <div class="card__badges"><span class="badge">Alcalino</span></div>
-            <h3 class="card__title">Carbonato de sodio</h3>
-            <p class="card__meta">Soda ash · Denso/Ligero</p>
-            <a class="card__cta" href="/producto/carbonato-sodio.html">Ver ficha</a>
+          <article class="card" data-name="Ácido láctico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido láctico</h3>
+          </article>
+
+          <article class="card" data-name="Ácido 2-metil butírico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido 2-metil butírico</h3>
+          </article>
+
+          <article class="card" data-name="Ácido propiónico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido propiónico</h3>
+          </article>
+
+          <article class="card" data-name="Ácido valérico" data-cat="acidos">
+            <div class="card__badges"><span class="badge">Ácido</span></div>
+            <h3 class="card__title">Ácido valérico</h3>
+          </article>
+
+          <article class="card" data-name="Limón" data-cat="terpenos">
+            <div class="card__badges"><span class="badge">Terpeno</span></div>
+            <h3 class="card__title">Limón</h3>
+          </article>
+
+          <article class="card" data-name="Menta" data-cat="terpenos">
+            <div class="card__badges"><span class="badge">Terpeno</span></div>
+            <h3 class="card__title">Menta</h3>
+          </article>
+
+          <article class="card" data-name="Naranja" data-cat="terpenos">
+            <div class="card__badges"><span class="badge">Terpeno</span></div>
+            <h3 class="card__title">Naranja</h3>
+          </article>
+
+          <article class="card" data-name="Terpineol" data-cat="terpenos">
+            <div class="card__badges"><span class="badge">Terpeno</span></div>
+            <h3 class="card__title">Terpineol</h3>
+          </article>
+
+          <article class="card" data-name="Terpinoleno" data-cat="terpenos">
+            <div class="card__badges"><span class="badge">Terpeno</span></div>
+            <h3 class="card__title">Terpinoleno</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de amilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de amilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de bencilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de bencilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de butilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de butilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de estiralilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de estiralilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de etilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de isoamilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de isoamilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de isobornilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de isobornilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de terpenilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de terpenilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetato de verdilo" data-cat="acetatos">
+            <div class="card__badges"><span class="badge">Acetato</span></div>
+            <h3 class="card__title">Acetato de verdilo</h3>
+          </article>
+
+          <article class="card" data-name="Butirato de amilo" data-cat="butiratos">
+            <div class="card__badges"><span class="badge">Butirato</span></div>
+            <h3 class="card__title">Butirato de amilo</h3>
+          </article>
+
+          <article class="card" data-name="Butirato de bencilo" data-cat="butiratos">
+            <div class="card__badges"><span class="badge">Butirato</span></div>
+            <h3 class="card__title">Butirato de bencilo</h3>
+          </article>
+
+          <article class="card" data-name="Butirato de etilo" data-cat="butiratos">
+            <div class="card__badges"><span class="badge">Butirato</span></div>
+            <h3 class="card__title">Butirato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Butirato de isoamilo" data-cat="butiratos">
+            <div class="card__badges"><span class="badge">Butirato</span></div>
+            <h3 class="card__title">Butirato de isoamilo</h3>
+          </article>
+
+          <article class="card" data-name="Caproato de alilo" data-cat="caproatos">
+            <div class="card__badges"><span class="badge">Caproato</span></div>
+            <h3 class="card__title">Caproato de alilo</h3>
+          </article>
+
+          <article class="card" data-name="Caproato de etilo" data-cat="caproatos">
+            <div class="card__badges"><span class="badge">Caproato</span></div>
+            <h3 class="card__title">Caproato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-06" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-06</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-08" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-08</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-10" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-10</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-12 (laúrico)" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-12 (laúrico)</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-12 (MNA)" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-12 (MNA)</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-14" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-14</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-16" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-16</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído C-18" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído C-18</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído amil" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído amil</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído cinámico" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído cinámico</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído ciclamen" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído ciclamen</h3>
+          </article>
+
+          <article class="card" data-name="Aldehído hexil cinámico" data-cat="aldehidos">
+            <div class="card__badges"><span class="badge">Aldehído</span></div>
+            <h3 class="card__title">Aldehído hexil cinámico</h3>
+          </article>
+
+          <article class="card" data-name="Ciclotene" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Ciclotene</h3>
+          </article>
+
+          <article class="card" data-name="Coumarina" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Coumarina</h3>
+          </article>
+
+          <article class="card" data-name="Dihidrocoumarina" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Dihidrocoumarina</h3>
+          </article>
+
+          <article class="card" data-name="Dihidromircenol" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Dihidromircenol</h3>
+          </article>
+
+          <article class="card" data-name="Delta decalactona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Delta decalactona</h3>
+          </article>
+
+          <article class="card" data-name="Delta dodecalactona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Delta dodecalactona</h3>
+          </article>
+
+          <article class="card" data-name="Dodecalactona gama" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Dodecalactona gama</h3>
+          </article>
+
+          <article class="card" data-name="Etil vainillina" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Etil vainillina</h3>
+          </article>
+
+          <article class="card" data-name="Gama decalactona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Gama decalactona</h3>
+          </article>
+
+          <article class="card" data-name="Gama heptalactona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Gama heptalactona</h3>
+          </article>
+
+          <article class="card" data-name="Ionona alfa" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Ionona alfa</h3>
+          </article>
+
+          <article class="card" data-name="Ionona beta" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Ionona beta</h3>
+          </article>
+
+          <article class="card" data-name="Linalool" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Linalool</h3>
+          </article>
+
+          <article class="card" data-name="Metil ionona gama" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Metil ionona gama</h3>
+          </article>
+
+          <article class="card" data-name="Rosacetol" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Rosacetol</h3>
+          </article>
+
+          <article class="card" data-name="Vainillina" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Vainillina</h3>
+          </article>
+
+          <article class="card" data-name="Citral" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Citral</h3>
+          </article>
+
+          <article class="card" data-name="Citronelol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Citronelol</h3>
+          </article>
+
+          <article class="card" data-name="Dietil ftalato" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Dietil ftalato</h3>
+          </article>
+
+          <article class="card" data-name="Dietil malonato" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Dietil malonato</h3>
+          </article>
+
+          <article class="card" data-name="Difenil óxido" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Difenil óxido</h3>
+          </article>
+
+          <article class="card" data-name="Diacetilo" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Diacetilo</h3>
+          </article>
+
+          <article class="card" data-name="Geraniol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Geraniol</h3>
+          </article>
+
+          <article class="card" data-name="Guayacol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Guayacol</h3>
+          </article>
+
+          <article class="card" data-name="Menthol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Menthol</h3>
+          </article>
+
+          <article class="card" data-name="Metil nonil cetona" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Metil nonil cetona</h3>
+          </article>
+
+          <article class="card" data-name="Heptoato de alilo" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Heptoato de alilo</h3>
+          </article>
+
+          <article class="card" data-name="Heptoato de etilo" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Heptoato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Dipropilenglicol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Dipropilenglicol</h3>
+          </article>
+
+          <article class="card" data-name="Propilenglicol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Propilenglicol</h3>
+          </article>
+
+          <article class="card" data-name="Triacetina" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Triacetina</h3>
+          </article>
+
+          <article class="card" data-name="Acetil metil carbinol" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Acetil metil carbinol</h3>
+          </article>
+
+          <article class="card" data-name="Aceto acetato de etilo" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Aceto acetato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Acetofenona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Acetofenona</h3>
+          </article>
+
+          <article class="card" data-name="Almizcle xilol" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Almizcle xilol</h3>
+          </article>
+
+          <article class="card" data-name="Anethol" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Anethol</h3>
+          </article>
+
+          <article class="card" data-name="Antranilato de metilo" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Antranilato de metilo</h3>
+          </article>
+
+          <article class="card" data-name="Benzoato de bencilo" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Benzoato de bencilo</h3>
+          </article>
+
+          <article class="card" data-name="Hercolin D" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Hercolin D</h3>
+          </article>
+
+          <article class="card" data-name="Laevo carbona" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Laevo carbona</h3>
+          </article>
+
+          <article class="card" data-name="Lactato de etilo" data-cat="fragancias solventes">
+            <div class="card__badges"><span class="badge">Fragancia</span><span class="badge">Solvente</span></div>
+            <h3 class="card__title">Lactato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Lilial" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Lilial</h3>
+          </article>
+
+          <article class="card" data-name="Valerianato de amilo" data-cat="valerianatos">
+            <div class="card__badges"><span class="badge">Valerianato</span></div>
+            <h3 class="card__title">Valerianato de amilo</h3>
+          </article>
+
+          <article class="card" data-name="Valerianato de etilo" data-cat="valerianatos">
+            <div class="card__badges"><span class="badge">Valerianato</span></div>
+            <h3 class="card__title">Valerianato de etilo</h3>
+          </article>
+
+          <article class="card" data-name="Veltol simple" data-cat="veltol">
+            <div class="card__badges"><span class="badge">Veltol</span></div>
+            <h3 class="card__title">Veltol simple</h3>
+          </article>
+
+          <article class="card" data-name="Veltol plus" data-cat="veltol">
+            <div class="card__badges"><span class="badge">Veltol</span></div>
+            <h3 class="card__title">Veltol plus</h3>
+          </article>
+
+          <article class="card" data-name="Verdox" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Verdox</h3>
+          </article>
+
+          <article class="card" data-name="Vertenex" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Vertenex</h3>
+          </article>
+
+          <article class="card" data-name="Vertofix" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Vertofix</h3>
+          </article>
+
+          <article class="card" data-name="Alcanfor" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Alcanfor</h3>
+          </article>
+
+          <article class="card" data-name="Salicilato de amilo" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Salicilato de amilo</h3>
+          </article>
+
+          <article class="card" data-name="Salicilato de bencilo" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Salicilato de bencilo</h3>
+          </article>
+
+          <article class="card" data-name="Salicilato de metilo" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Salicilato de metilo</h3>
+          </article>
+
+          <article class="card" data-name="Galaxolide 50% DEP" data-cat="fragancias">
+            <div class="card__badges"><span class="badge">Fragancia</span></div>
+            <h3 class="card__title">Galaxolide 50% DEP</h3>
           </article>
         </div>
       </div>
