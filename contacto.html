@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="container header__inner">
       <a class="brand" href="index.html">
-        <img src="logo_gama.png" class="brand__logo" alt=" Gama">
+        <img src="logo_gama.png" class="brand__logo" alt="Gama">
         <span class="brand__name">Esencias Gama</span>
       </a>
       <nav class="nav">
@@ -31,11 +31,12 @@
       <!-- Información -->
       <div class="card">
         <div class="container hero__grid">
-      <div class="hero__copy">
-        <h1 class="hero__title">Contáctanos</h1>
-        <p class="hero__desc">Estamos aquí para ayudarte con cualquier duda, pedido o cotización. Nuestro equipo te atenderá con gusto.</p>
-      </div>
-    </div>
+          <div class="hero__copy">
+            <h1 class="hero__title">Contáctanos</h1>
+            <p class="hero__desc">Estamos aquí para ayudarte con cualquier duda, pedido o cotización. Nuestro equipo te atenderá con gusto.</p>
+          </div>
+        </div>
+
         <h2>Información de contacto</h2>
         <ul class="contact-list">
           <li class="contact-item">
@@ -63,23 +64,28 @@
       <!-- Formulario -->
       <div class="card">
         <h2>Envíanos un mensaje</h2>
-        <form class="form">
+
+        <form class="form" id="contactForm">
           <div class="field">
             <label class="label" for="name">Nombre</label>
-            <input class="input" type="text" id="name" placeholder="Tu nombre completo">
+            <input class="input" type="text" id="name" name="name" required placeholder="Tu nombre completo">
           </div>
+
           <div class="field">
             <label class="label" for="email">Correo electrónico</label>
-            <input class="input" type="email" id="email" placeholder="tucorreo@ejemplo.com">
+            <input class="input" type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
           </div>
+
           <div class="field">
-            <label class="label" for="number">Telefono</label>
-            <input class="input" type="text" id="number" placeholder="55 1234 5678">
+            <label class="label" for="number">Teléfono</label>
+            <input class="input" type="text" id="number" name="phone" required placeholder="55 1234 5678">
           </div>
+
           <div class="field">
             <label class="label" for="msg">Mensaje</label>
-            <textarea class="textarea" id="msg" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+            <textarea class="textarea" id="msg" name="message" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
           </div>
+
           <button class="btn" type="submit">Enviar mensaje</button>
         </form>
       </div>
@@ -110,5 +116,33 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init("4VS6KT0itMRZUI-eM");
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("number").value,
+        message: document.getElementById("msg").value
+      };
+
+      emailjs.send("service_kudcbci", "template_t0wfvqp", params)
+        .then(function() {
+          alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
+          document.getElementById("contactForm").reset();
+        }, function(error) {
+          console.error("Error al enviar: ", error);
+          alert("Ocurrió un error al enviar tu mensaje. Intenta de nuevo.");
+        });
+    });
+  </script>
+
 </body>
 </html>
